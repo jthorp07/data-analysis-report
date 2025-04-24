@@ -4,7 +4,11 @@ This repository contains the scripts and data source files used when testing AI 
 
 *Note: Any commands shown are to be executed in a terminal pointing to the root directory of this repository.*
 
-## 1: Directory Setup
+## Retrieve Essay Data
+
+The dataset of essays used is too large to include in the remote repository. To retrieve this file, you will have to download it [here](https://www.kaggle.com/datasets/shanegerami/ai-vs-human-text). Once downloaded, you'll need to uncompress the file and rename it from `AI_Human.csv` to `essay_data.csv` and place the file at the root of the repository.
+
+## Directory Setup
 
 First, create the required directories where data will be placed:
 
@@ -35,7 +39,7 @@ If you are not comfortable creating directories on the command line, you can als
     - `word_frequency.txt`
     - `README.md` (Not required for calculations, but contains these instructions)
 
-## 2. Data preparation:
+## Data preparation:
 
 Next, to prepare auxilary data thaat will be used later in the process, run the scripts `word_frequency.py` and `opted_reader.py`. Running these script will require Python 3:
 
@@ -47,7 +51,7 @@ cd src && py word_frequency.py && py opted_reader.py
 
 After running these scripts, there should be 2 new .csv files in the data directory.
 
-## 3. Parse essays:
+## Parse essays:
 
 Now the essays can be individually parsed through. This is done in the script `essay_reader.py`:
 
@@ -58,7 +62,7 @@ cd src && py essay_reader.py
 
 After this script finishes, the `src/data/ai/`, `src/data/human/`, and `src/data/batches/` directories should contain many .json files.
 
-## 4. Run inference tests
+## Run inference tests
 
 The final step is running the inference tests as defined in `inference.py`. Running this will require the SciPy library. For instructions on how to install SciPy, go [here](https://scipy.org).
 
